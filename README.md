@@ -1,2 +1,10 @@
 # Learn_JavaScript
-å­¦ä¹ JavaScriptï¼Œç»ƒä¹ ä¾‹å­
+
+Ñ§Ï°JavaScript£¬Á·Ï°Ê¾Àý£º
+
+1. ¸Ä±äStyleÑùÊ½
+2. ÔöÉ¾DOM½Úµã
+3. DOM½ÚµãÅÅÐò
+4. Ìí¼ÓÑ¡Ïî½çÃæ
+5. ±íµ¥ÑéÖ¤
+6. ...
