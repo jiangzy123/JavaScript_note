@@ -7,7 +7,6 @@ tags: [DOM事件,鼠标事件]
 前面的例子一直都在使用鼠标的`click`事件，之前也零零散散的了解过一些事件，诸如：`focus`、`mouseover`等，这里重新针对这些鼠标事件再学习总结一遍。
 
 <!-- more -->
-
 JavaScript操作HTML，最重要的知识应该就是这块了，没有这块的相关鼠标事件，真的很难想象JavaScript还能对HTML做些什么。这里就从网页加载开始，系统学习一下这些DOM事件。
 
 ### 1. `onload`&`onunload`事件
