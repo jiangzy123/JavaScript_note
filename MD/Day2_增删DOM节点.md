@@ -21,7 +21,7 @@ tags: [正式学习javascript,增删DOM节点]
 2. `appendChild`方法，在父节点中插入一个DOM节点；
 3. `insertBefore`方法，将一个DOM节点插入到指定的位置上；
 
-知道了方法，就得动手实践了，不动手写代码，估计我永远也提高不了编程水平。实际演示代码[点击这里>](/html/JavaScript/002.html)
+知道了方法，就得动手实践了，不动手写代码，估计我永远也提高不了编程水平。实际演示代码[点击这里>](../HTML/002.html)
 
 ### 2. 删除DOM节点
 世界总是平衡的，有正就要有负，有增加就应该有删除，删除节点的方法就相对简单点，当然不是`document.getElementById("xxx").innerHTML = ''`.
