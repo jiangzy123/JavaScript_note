@@ -7,17 +7,51 @@
 <script>
 	
 </script>
+<style>
+	body,p{
+		margin: 0;
+		padding: 0;
+	}
+	#content{
+		margin: 1em auto;
+		padding: 1em;
+		border: 5px double  ;
+		width: 280px;
+		height: 140px;
+	}
+	#form_title{
+		text-align: center;
+		font-family: fantasy;
+		font-size: 2em;
+		font-weight: bold;
+	}
+	#form_content{
+		padding: 0 1.5em; 
+
+	}
+	#form_footer{
+		text-align: right;
+
+	}
+	#input input{
+		width: 100%;
+		height: 3em;
+		background-color: #eee;
+		border-style: none;
+		border-color: #eee;
+		padding-left: 1em;
+	}
+</style>
 <body>
 	<div id="content">
-		<form action="#" id="main_form">
-			<div id="form_title">NAME SIGNAGE</div>
-			<div id="form_content">
-				<p id="name"><span>INPUT YOUR NAME:</span><span id="error"></span></p>
-				<input type="text" name="name" value="Please input your name">
-				<input type="submit" value="OK">
-			</div>
-			
-		</form>
+		<div id="form_title">NAME SIGNAGE</div>
+		<div id="form_content">
+			<p id="text"><span>Enter Name:</span><span id="error"></span></p>
+			<p id="input"><input type="text" name="name" value="Please input your name"></p>
+		</div>
+		<div id="form_footer">
+			<input type="submit" value="SHOW">
+		</div>
 	</div>
 </body>
 </html>

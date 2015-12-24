@@ -5,32 +5,50 @@
 	<title>Day6 函数</title>
 </head>
 <script>
-	// function sayHello(name){
-	// 	alert("Hello," + name);
-	// }
+/**
+	函数对象
+*/
+	 function sayHello(name){
+	 	alert("Hello," + name);
+	 }
+	 var sayHello = function(name){
+	 	alert("Hello..." + name);
+	 }
+	 // sayHello("JavaScript");
 
-	// var sayHello = function(name){
-	// 	alert("Hello..." + name);
-	// }
-
-	// sayHello("JavaScript");
-
+/**
+	函数当做参数传递
+*/
 	function calcSomething(regular,value1,value2){
     	alert(regular(value1,value2));
 	}
-	
 	function plus(x1,x2){
 	    return  x1 + x2;
 	}
 	function minus(x1,x2){
 		return x1 - x2;
 	}
-	
 	// calcSomething(plus,5,10);
 	// calcSomething(minus,5,10);
+	// alert(calcSomething.length);
+	// document.write(calcSomething.toString());
 
-	alert(calcSomething.length);
-	document.write(calcSomething.toString());
+/**
+	arguments对象
+*/
+	function addSum(){
+		var sum = 0;
+		if (arguments.length == 0) {
+			return sum;
+		}else{
+			for (var i = 0; i < arguments.length; i++) {
+				sum = sum + arguments[i];
+			};
+			return sum;
+		};
+	}
+	alert("The sum is " + addSum(3,4,5));
+
 </script>
 <body>
 	
