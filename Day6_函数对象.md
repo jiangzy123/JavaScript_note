@@ -1,7 +1,7 @@
 title: Day6 JavaScript学习 - 函数对象
 date: 2015-12-09
 categories: JavaScript
-tags: [正式学习javascript,函数对象]
+tags: [函数对象,Function类]
 ---
 
 > JavaScript 最令人感兴趣的莫过于函数实际上就是功能完整的对象，JavaScript中所有的事物都是对象，包括函数。函数名只是指向函数对象的引用值，行为就像其他对象一样。甚至可以使两个变量指向同一个函数，因此函数可以当做参数传递给另外一个函数。
@@ -21,12 +21,56 @@ function sayHello(name){
 
 ```javascript
 var sayHello = function(name){
-    alert("Hello," + name);
+    alert("Hello..." + name);
 }
 ```
 
-### 2. Function对象的属性与方法
+两种方式得到的效果是一样的，`sayHello`都是函数对象的一个引用，可以理解为指向一个对象的指针变量。
+
+```javascript
+function sayHello(name){
+    alert("Hello," + name);
+}
+var sayHello = function(name){
+    alert("Hello..." + name);
+}
+sayHello("JavaScript");
+```
+
+这样弹出的窗口肯定是"Hello...JavaScript"而不是"Hello,JavaScript"，因为指向的对象变了。
+
+> 函数实际上就是功能完整的对象，对象是某个类的实例。那么通过`Function`类肯定也是可以创建一个函数的。
+
+`Function`类可以创建任何函数，语法如下：
+
+    var function_name = new function(arg1, arg2, ..., argN, function_body);
+
+那么上面那个例子就可以表示为：
+
+    var sayHello = new function("name", "alert(\"Hello,\" + name);");
+
+看起来就觉得别扭，所以通常情况下不会这么去创建一个函数对象。但是这种方式却很直接的将函数名只是函数对象的一个引用的概念表现出来了，所有函数都应看作 Function 类的实例。既然只是一个引用，当然就可以将一个函数当作参数变量传递给另一个函数。看下面例子：
+
+```javascript
+function calcSomething(regular,value1,value2){
+    alert(regular(value1,value2));
+}
+function plus(x1,x2){
+    return  x1 + x2;
+}
+function minus(x1,x2){
+    return x1 - x2;
+}
+calcSomething(plus,5,10);
+calcSomething(minus,5,10);
+```
+
+将`plus`以及`minus`当作一个参数传入另外一个函数中。
 
 
+### 2. Function对象（类）的属性与方法
 
-> 尽管可以使用 Function 构造函数创建函数，但最好不要使用它，因为用它定义函数比用传统方式要慢得多。不过，所有函数都应看作 Function 类的实例。
+每一个对象都有它的属性和方法，既然函数是`Function`类的一个对象，那么每一个函数都应该继承`Function`类的属性与方法。比较常见的有`length`属性以及`toString`方法。
+
+1. `calcSomething.length`等于3，代表有3个参数；
+2. `calcSomething.toString()`打印出函数主体；

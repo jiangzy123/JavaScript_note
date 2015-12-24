@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Day6 函数</title>
+</head>
+<script>
+	// function sayHello(name){
+	// 	alert("Hello," + name);
+	// }
+
+	// var sayHello = function(name){
+	// 	alert("Hello..." + name);
+	// }
+
+	// sayHello("JavaScript");
+
+	function calcSomething(regular,value1,value2){
+    	alert(regular(value1,value2));
+	}
+	
+	function plus(x1,x2){
+	    return  x1 + x2;
+	}
+	function minus(x1,x2){
+		return x1 - x2;
+	}
+	
+	// calcSomething(plus,5,10);
+	// calcSomething(minus,5,10);
+
+	alert(calcSomething.length);
+	document.write(calcSomething.toString());
+</script>
+<body>
+	
+</body>
+</html>
