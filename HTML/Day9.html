@@ -4,34 +4,43 @@
 	<meta charset="UTF-8">
 	<title>Day9 名牌示例</title>
 </head>
-<script>
-	
-</script>
 <style>
-	body,p{
+	body{
 		margin: 0;
 		padding: 0;
 	}
-	#content{
+	#container{
 		margin: 1em auto;
 		padding: 1em;
 		border: 5px double  ;
 		width: 280px;
 		height: 140px;
+		position: relative;
 	}
 	#form_title{
 		text-align: center;
-		font-family: fantasy;
+		font-family: Cursive;
 		font-size: 2em;
 		font-weight: bold;
+		position: relative;
+		bottom:10px;
 	}
 	#form_content{
-		padding: 0 1.5em; 
-
+		padding: 0 1em; 
+		height:55px;
+		width: 250px;
 	}
 	#form_footer{
-		text-align: right;
-
+		position: absolute;
+		bottom:10px;
+		right:10px;
+	}
+	#form_footer input{
+		background-color: black;
+		color: orange;
+		font-weight: bold;
+		border:none;
+		font-size:0.9em;
 	}
 	#input input{
 		width: 100%;
@@ -40,17 +49,73 @@
 		border-style: none;
 		border-color: #eee;
 		padding-left: 1em;
+		padding-bottom:5px;
+		color:#aaa;
+	}
+	#error{
+		color: red;
+		font-size:0.9em;
+		font-weight: bold;
+		margin-left: 5px;
+	}
+	#text{
+		padding-left: 0.5em;
+	}
+	.cube{
+		height:35px;
+		width:25px;
+		float:left;
+		margin:10px 8px;
+		text-align: center;
+		font-weight: bold;
+		font-size:1.3em;
+		font-family: fantasy;
+		background-color: white;
+		line-height: 45px
 	}
 </style>
+<script>
+	function showTime(){
+		var form_content = document.getElementById('form_content');
+		var name = document.getElementById("name").value.toUpperCase();
+		var letters = name.split('');
+		form_content.innerHTML = '';
+		form_content.style.backgroundColor = '#ddd';
+		for (var i = 0; i < letters.length; i++) {
+			var elementCube = document.createElement("div");
+			elementCube.setAttribute("class","cube");
+			elementCube.style.height = "35px";
+			elementCube.style.width = '25px';
+			elementCube.style.float = 'left';
+			elementCube.style.margin = '10px 8px';
+			elementCube.style.textAlign = 'center';
+			elementCube.style.fontWeight = 'bold';
+			elementCube.style.fontSize = '1.3em';
+			elementCube.style.fontFamily = 'fantasy';
+			elementCube.style.backgroundColor = 'white';
+			elementCube.style.lineHeight = '45px';
+			elementCube.innerHTML = letters[i];
+			form_content.appendChild(elementCube);
+		}
+		var button = document.getElementById("button");
+		button.value = "BACK";
+		button.setAttribute("onclick","backToHome()");
+	}
+
+	function backToHome(){
+		alert("NO");
+	}
+
+</script>
 <body>
-	<div id="content">
+	<div id="container">
 		<div id="form_title">NAME SIGNAGE</div>
 		<div id="form_content">
-			<p id="text"><span>Enter Name:</span><span id="error"></span></p>
-			<p id="input"><input type="text" name="name" value="Please input your name"></p>
+			<div id="text"><span>Enter name:</span><span id="error"></span></div>
+			<div id="input"><input type="text" id="name" value="Please input your name" onfocus="inputFocus()"></div>
 		</div>
 		<div id="form_footer">
-			<input type="submit" value="SHOW">
+			<input type="submit" id="button" value="SHOW" onclick="showTime()">
 		</div>
 	</div>
 </body>
