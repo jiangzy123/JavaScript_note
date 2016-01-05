@@ -26,7 +26,9 @@ JavaScript操作HTML，最重要的知识应该就是这块了，没有这块的
 ### 4. `onmousedown`&`onmouseup`&`onclick`事件
 这一组是鼠标点击的一套动作。按下鼠标`onmousedown`,松开鼠标`onmouseup`,完成点击`onclick`。通过这些可以做出很漂亮的效果以及用户体验。
 
+> 练习时间
 
+实现`input`和`button`一些最简单的交互动作，例如：点击文本控件时，清空默认文本；点击按钮的时候，突出按钮按钮样式。也许看起来特别简单，但是非常有必要自己写出来。初期代码写得肯定渣，但是随着一步一步学习，相信后续有所改善。查看代码or效果，请[点击此处>>>](../HTML/Day7.html)
 
 以上只是列举了我觉得比较常用的一些事件，需要更多的请查看参考手册：[HTML DOM Event 对象](http://www.w3school.com.cn/jsref/dom_obj_event.asp)
 

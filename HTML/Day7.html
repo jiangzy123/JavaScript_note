@@ -6,31 +6,76 @@
 </head>
 <script>
 	function loadFunction(){
-		initInputer();
-		initButton();
+		initIpt();
+		initBtn();
 	}
-	function initInputer(){
+	function initIpt(){
 		var inputers = document.getElementsByTagName('input');
 		for (var i=0; i<inputers.length; i++) {
-			inputers[i].setAttribute("onclick","clickInputer(this)");
-			inputers[i].setAttribute("onblur","blurInputer(this)");
-			inputers[i].setAttribute("onfocus","focusInputer(this)");			
+			inputers[i].setAttribute("onchange","changeIpt()");
+			inputers[i].setAttribute("onblur","blurIpt()");
+			inputers[i].setAttribute("onfocus","focusIpt()");			
 		};
-		alert(this);
 	}
-	function initButton(){
+	function initBtn(){
 		var buttons = document.getElementsByTagName('button');
 		for (var i = 0; i < buttons.length; i++) {
 			buttons[i].setAttribute("onmousedown","mousedownBtn()");
 			buttons[i].setAttribute("onmouseup","mouseupBtn()");
+			buttons[i].setAttribute("onmouseover","mouseoverBtn()");
+			buttons[i].setAttribute("onmouseout","mouseoutBtn()");
 		};
 	}
-	function clickInputer(whichInputer){
-
+	var defaultValue = 'Enter Something';
+	function blurIpt(){
+		var textIpt = document.getElementById('text');
+		if (textIpt.value == '') {
+			textIpt.value = defaultValue;
+		}
+		textIpt.style.border = '';
 	}
+	function focusIpt(){
+		var textIpt = document.getElementById('text');
+		textIpt.style.border = "3px solid red";
+		if (text.value == defaultValue) {
+			textIpt.value = '';
+		}		
+	}
+	function changeIpt(){
+		var textIpt = document.getElementById('text');
+		textIpt.value = textIpt.value.toUpperCase();
+	}
+	function mousedownBtn(){
+		var btn = document.getElementById("button");
+		btn.style.fontWeight = 'bold';
+		btn.style.color = 'red';
+		btn.style.backgroundColor = 'yellow';
+	}
+	function mouseupBtn(){
+		var btn = document.getElementById("button");
+		btn.style.fontWeight = '';
+		btn.style.color = '';
+		btn.style.backgroundColor = '';
+	}
+	function mouseoverBtn(){
+		var btn = document.getElementById("button");
+		btn.style.fontWeight = 'bold';
+		btn.style.width = '200px';
+		btn.style.height = '30px'
+		btn.innerHTML = 'click me,click me,click me!!!';		
+	}
+	function mouseoutBtn(){
+		var btn = document.getElementById("button");
+		btn.style = '';
+		btn.innerHTML = 'click';
+	}
+
 </script>
-<body onload = "initInputer()">
-	<input type="text" id="text" value="Enter Something">
+<body onload = "loadFunction()" style="text-align: center">
+  <a href="http://lupeng.me" style="font-style: italic; margin-right: 1em">Home</a>
+  <a href="http://lupeng.me/categories/JavaScript/" style="font-style: italic; margin-right: 1em">JavaScript</a>
+  <br/><br/>
+	<input type="text" id="text" value="Enter Something" style="width: 200px;height: 30px"><br/><br/>
 	<button id="button">Click</button>
 </body>
 </html>
