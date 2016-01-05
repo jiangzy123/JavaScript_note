@@ -5,10 +5,6 @@
 	<title>Day9 名牌示例</title>
 </head>
 <style>
-	body{
-		margin: 0;
-		padding: 0;
-	}
 	#container{
 		margin: 1em auto;
 		padding: 1em;
@@ -48,7 +44,7 @@
 		border:none;
 		font-size:0.9em;
 	}
-	#input input{
+	.normalIpt{
 		width: 100%;
 		height: 3em;
 		background-color: #eee;
@@ -58,11 +54,20 @@
 		padding-bottom:5px;
 		color:#aaa;
 	}
+	.focusIpt{
+		width: 100%;
+		height: 3em;
+		background-color: #eee;
+		border: 1px solid red;
+		padding-left: 1em;
+		padding-bottom:5px;
+		color:blue;
+		font-weight: bold;
+	}
 	#error{
 		color: red;
-		font-size:0.9em;
-		font-weight: bold;
-		margin-left: 5px;
+		font-size:0.8em;
+		margin-left: 10px;
 	}
 	#text{
 		padding-left: 0.5em;
@@ -82,6 +87,9 @@
 </style>
 <script>
 	function showTime(){
+		checkName();
+		var error = document.getElementById("error");
+		if (error.innerHTML != '') return false; // 如果有错误信息，不执行按钮操作
 		var container = document.getElementById("container");
 		var form_footer = document.getElementById("form_footer");
 		var form_content = document.getElementById('form_content');
@@ -94,16 +102,6 @@
 		for (var i = 0; i < letters.length; i++) {
 			var elementCube = document.createElement("div");
 			elementCube.setAttribute("class","cube");
-			elementCube.style.height = "35px";
-			elementCube.style.width = '25px';
-			elementCube.style.float = 'left';
-			elementCube.style.margin = '10px 8px';
-			elementCube.style.textAlign = 'center';
-			elementCube.style.fontWeight = 'bold';
-			elementCube.style.fontSize = '1.3em';
-			elementCube.style.fontFamily = 'fantasy';
-			elementCube.style.backgroundColor = 'white';
-			elementCube.style.lineHeight = '45px';
 			elementCube.innerHTML = letters[i];
 			form_content2.appendChild(elementCube);
 		}
@@ -121,14 +119,56 @@
 		button.value = 'SHOW';
 		button.setAttribute("onclick","showTime()");
 	}
-
+	function init () {
+		var nameIpt = document.getElementById("name");
+		nameIpt.setAttribute("onfocus","focusIpt()");
+		nameIpt.setAttribute("onblur","blurIpt()");
+		nameIpt.setAttribute("onchange","changeIpt()");
+		nameIpt.setAttribute("class","normalIpt");
+	}
+	var defaultValue = 'Please input your name';
+	function focusIpt(){
+		var nameIpt = document.getElementById("name");
+		if(nameIpt.value == defaultValue){
+			nameIpt.value = '';
+		}
+		nameIpt.setAttribute("class","focusIpt");
+	}
+	function blurIpt(){
+		var nameIpt = document.getElementById("name");
+		if(nameIpt.value == ""){
+			nameIpt.value = defaultValue;
+		}
+		nameIpt.setAttribute("class","normalIpt");
+	}
+	function changeIpt(){
+		var error = document.getElementById("error");
+		var nameIpt = document.getElementById("name");
+		error.innerHTML = '';
+		nameIpt.value = nameIpt.value.toUpperCase();
+	}
+	function checkName(){
+		var error = document.getElementById("error");
+		var reg = /^[a-zA-Z]{6}$/;
+		var nameIpt = document.getElementById("name");
+		if (!reg.test(nameIpt.value)) {
+			error.innerHTML = 'Only allow six letters';
+		}
+		if(nameIpt.value == ''){
+			error.innerHTML = 'No allow empty';
+		}
+	}
 </script>
-<body>
+<body onload="init()">
+	<div style="text-align: center">
+		<a href="http://lupeng.me" style="font-style: italic; margin-right: 1em">Home</a>
+		<a href="http://lupeng.me/categories/JavaScript/" style="font-style: italic; margin-right: 1em">JavaScript</a>
+	</div>
 	<div id="container">
 		<div id="form_title">NAME SIGNAGE</div>
 		<div id="form_content">
 			<div id="text"><span>Enter name:</span><span id="error"></span></div>
-			<div id="input"><input type="text" id="name" value="Please input your name" onfocus="inputFocus()"></div>
+			<div id="input"><input type="text" id="name" value="Please input your name"></div>
 		</div>
 		<div id="form_footer">
 			<input type="submit" id="button" value="SHOW" onclick="showTime()">
