@@ -6,10 +6,31 @@
 </head>
 <script>
 	function loadFunction(){
-		alert("The website have started up...");
+		initInputer();
+		initButton();
+	}
+	function initInputer(){
+		var inputers = document.getElementsByTagName('input');
+		for (var i=0; i<inputers.length; i++) {
+			inputers[i].setAttribute("onclick","clickInputer(this)");
+			inputers[i].setAttribute("onblur","blurInputer(this)");
+			inputers[i].setAttribute("onfocus","focusInputer(this)");			
+		};
+		alert(this);
+	}
+	function initButton(){
+		var buttons = document.getElementsByTagName('button');
+		for (var i = 0; i < buttons.length; i++) {
+			buttons[i].setAttribute("onmousedown","mousedownBtn()");
+			buttons[i].setAttribute("onmouseup","mouseupBtn()");
+		};
+	}
+	function clickInputer(whichInputer){
+
 	}
 </script>
-<body onload = "loadFunction()">
-
+<body onload = "initInputer()">
+	<input type="text" id="text" value="Enter Something">
+	<button id="button">Click</button>
 </body>
 </html>
