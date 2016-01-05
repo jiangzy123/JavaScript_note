@@ -30,6 +30,12 @@
 		height:55px;
 		width: 250px;
 	}
+	#form_content2{
+		padding: 0 1em; 
+		height:55px;
+		width: 250px;
+		background-color: #ddd;
+	}
 	#form_footer{
 		position: absolute;
 		bottom:10px;
@@ -76,11 +82,15 @@
 </style>
 <script>
 	function showTime(){
+		var container = document.getElementById("container");
+		var form_footer = document.getElementById("form_footer");
 		var form_content = document.getElementById('form_content');
 		var name = document.getElementById("name").value.toUpperCase();
 		var letters = name.split('');
-		form_content.innerHTML = '';
-		form_content.style.backgroundColor = '#ddd';
+		form_content.style.display = 'none';
+		var form_content2 = document.createElement("div");
+		form_content2.setAttribute("id","form_content2");
+		container.insertBefore(form_content2,form_footer);
 		for (var i = 0; i < letters.length; i++) {
 			var elementCube = document.createElement("div");
 			elementCube.setAttribute("class","cube");
@@ -95,7 +105,7 @@
 			elementCube.style.backgroundColor = 'white';
 			elementCube.style.lineHeight = '45px';
 			elementCube.innerHTML = letters[i];
-			form_content.appendChild(elementCube);
+			form_content2.appendChild(elementCube);
 		}
 		var button = document.getElementById("button");
 		button.value = "BACK";
@@ -103,7 +113,13 @@
 	}
 
 	function backToHome(){
-		alert("NO");
+		var form_content = document.getElementById('form_content');
+		var form_content2 = document.getElementById("form_content2");
+		var container = document.getElementById("container");
+		container.removeChild(form_content2);
+		form_content.style.display = '';
+		button.value = 'SHOW';
+		button.setAttribute("onclick","showTime()");
 	}
 
 </script>
