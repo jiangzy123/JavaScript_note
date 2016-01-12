@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Day9 window对象</title>
+</head>
+
+<body>
+	<div style="margin-bottom: 20px">
+		<a href="http://lupeng.me" style="font-style: italic; margin-right: 1em">Home</a>
+		<a href="http://lupeng.me/categories/JavaScript/" style="font-style: italic; margin-right: 1em">JavaScript</a>
+	</div>
+	<script>
+		document.write("屏幕高度：" + screen.availHeight);
+		document.write("</br>屏幕宽度：" + screen.availWidth);
+		
+		document.write("<hr/>窗口高度：" + window.innerHeight);
+		document.write("</br>窗口宽度：" + window.innerWidth);
+		
+		document.write('<hr/>主机域名：' + location.hostname);
+		document.write('<br>页面路径：' + location.pathname);
+		document.write("<br/>主机端口："+ location.port);
+		document.write("<br/>web协议：" + location.protocol);
+		document.write("<br/>URL：" + location.href);
+	</script>
+	<hr>
+	<input type="button" id="btn" value="加载新的文档"><hr>
+	<input type="button" id="back" value="back"><br>
+	<input type="button" id="forward" value="forward">	<hr>
+	<input type="button" id="confirm" value="确认框"><br>
+	<input type="button" id="prompt" value="输入框">	
+	<script>
+		document.getElementById("btn").onclick = function(){
+			location.assign("http://lupeng.me");
+		};
+		document.getElementById("back").onclick = function(){
+			history.back();
+		};
+		document.getElementById("forward").onclick = function(){
+			history.forward();
+		};
+		document.getElementById("confirm").onclick = function(){
+			var yesOrNo = confirm("请确认!!!");
+			if(yesOrNo){
+				alert("You choose YES");
+			}else{
+				alert("You choose NO");
+			}
+		};
+		document.getElementById("prompt").onclick = function(){
+			var name = prompt("请输入你的名字：","Jack");
+			if(name != null){  // 取消返回null
+				alert("Your name is " + name);
+			}
+		};		
+	</script>
+</body>
+</html>
