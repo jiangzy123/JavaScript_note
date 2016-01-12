@@ -1,13 +1,15 @@
 # Learn_JavaScript
 
-Ñ§Ï°JavaScript£¬Á·Ï°Ê¾Àı£º
+Ã‘Â§ÃÂ°JavaScriptÂ£Â¬ÃÂ·ÃÂ°ÃŠÂ¾Ã€Ã½Â£Âº
 
-1. [Day1_¸Ä±äStyle](MD/Day1_¸Ä±äStyle.md)
-2. [Day2_ÔöÉ¾DOM½Úµã](MD/Day2_ÔöÉ¾DOM½Úµã.md)
-3. [Day3_DOM½ÚµãÅÅĞò](MD/Day3_DOM½ÚµãÅÅĞò.md)
-4. [Day4_Ìí¼ÓÑ¡Ïî](MD/Day4_Ìí¼ÓÑ¡Ïî.md)
-5. [Day5_±íµ¥ÑéÖ¤](MD/Day5_±íµ¥ÑéÖ¤.md)
-6. [Day6_º¯Êı¶ÔÏó](MD/Day6_º¯Êı¶ÔÏó.md)
-7. [Day7_DOMÊÂ¼ş](MD/Day7_DOMÊÂ¼ş.md)
-8. [Day8_windows¶ÔÏó](MD/Day8_windows¶ÔÏó.md)
-9. ...
+1. [Day1_Â¸Ã„Â±Ã¤Style](MD/Day1_Â¸Ã„Â±Ã¤Style.md)
+2. [Day2_Ã”Ã¶Ã‰Â¾DOMÂ½ÃšÂµÃ£](MD/Day2_Ã”Ã¶Ã‰Â¾DOMÂ½ÃšÂµÃ£.md)
+3. [Day3_DOMÂ½ÃšÂµÃ£Ã…Ã…ÃÃ²](MD/Day3_DOMÂ½ÃšÂµÃ£Ã…Ã…ÃÃ².md)
+4. [Day4_ÃŒÃ­Â¼Ã“Ã‘Â¡ÃÃ®](MD/Day4_ÃŒÃ­Â¼Ã“Ã‘Â¡ÃÃ®.md)
+5. [Day5_Â±Ã­ÂµÂ¥Ã‘Ã©Ã–Â¤](MD/Day5_Â±Ã­ÂµÂ¥Ã‘Ã©Ã–Â¤.md)
+6. [Day6_ÂºÂ¯ÃŠÃ½Â¶Ã”ÃÃ³](MD/Day6_ÂºÂ¯ÃŠÃ½Â¶Ã”ÃÃ³.md)
+7. [Day7_DOMÃŠÃ‚Â¼Ã¾](MD/Day7_DOMÃŠÃ‚Â¼Ã¾.md)
+8. [Day8_åç‰Œç¤ºä¾‹](MD/Day8_åç‰Œç¤ºä¾‹.md)
+9. [Day9_windowå¯¹è±¡](MD/windowå¯¹è±¡.md)
+10. [Day10_å®šæ—¶å™¨ç¤ºä¾‹](MD/å®šæ—¶å™¨ç¤ºä¾‹.md)
+11.  ...
