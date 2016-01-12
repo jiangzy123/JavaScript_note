@@ -1,15 +1,15 @@
 # Learn_JavaScript
 
-Ñ§Ï°JavaScript£¬Á·Ï°Ê¾Àý£º
+> JavaScript学习笔记
 
-1. [Day1_¸Ä±äStyle](MD/Day1_¸Ä±äStyle.md)
-2. [Day2_ÔöÉ¾DOM½Úµã](MD/Day2_ÔöÉ¾DOM½Úµã.md)
-3. [Day3_DOM½ÚµãÅÅÐò](MD/Day3_DOM½ÚµãÅÅÐò.md)
-4. [Day4_Ìí¼ÓÑ¡Ïî](MD/Day4_Ìí¼ÓÑ¡Ïî.md)
-5. [Day5_±íµ¥ÑéÖ¤](MD/Day5_±íµ¥ÑéÖ¤.md)
-6. [Day6_º¯Êý¶ÔÏó](MD/Day6_º¯Êý¶ÔÏó.md)
-7. [Day7_DOMÊÂ¼þ](MD/Day7_DOMÊÂ¼þ.md)
+1. [Day1_改变Style](MD/Day1_改变Style.md)
+2. [Day2_增删DOM节点](MD/Day2_增删DOM节点.md)
+3. [Day3_DOM节点排序](MD/Day3_DOM节点排序.md)
+4. [Day4_添加选项](MD/Day4_添加选项.md)
+5. [Day5_表单验证](MD/Day5_表单验证.md)
+6. [Day6_函数对象](MD/Day6_函数对象.md)
+7. [Day7_DOM事件](MD/Day7_DOM事件.md)
 8. [Day8_名牌示例](MD/Day8_名牌示例.md)
-9. [Day9_window对象](MD/window对象.md)
-10. [Day10_定时器示例](MD/定时器示例.md)
+9. [Day9_window对象](MD/Day9_Window对象.md)
+10. [Day10_定时器示例](MD/Day10_定时器示例.md)
 11.  ...
