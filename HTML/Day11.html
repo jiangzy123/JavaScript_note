@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Day11</title>
+</head>
+<script>
+	function afterLoad(){
+		var start = document.getElementById('start');
+		var stop = document.getElementById("stop");
+		start.onclick = function(){
+			startTime();
+		}
+		stop.onclick = function(whichTime){
+			stopTime(whichTime);
+		}
+	}
+
+</script>
+<body onload="">
+	<button id="start">Start</button>
+	<button id="stop">Stop</button>
+</body>
+</html>
