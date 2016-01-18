@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Day10 定时器示例</title>
+</head>
+<script>
+	function getById(id){
+		return document.getElementById(id);
+	}
+	function checkTime(x){
+		if (x < 10) {
+			x = "0" + x;
+		}
+		return x;
+	}
+	function startTime(){
+		var date = new Date();
+		var hour = date.getHours();
+		var minute = date.getMinutes();
+		var second = date.getSeconds();
+		hour = checkTime(hour);
+		minute = checkTime(minute);
+		second = checkTime(second);
+		getById("content").innerHTML = hour + ":" + minute + ":" + second;
+		setTimeout("startTime()",500);
+	}
+</script>
+<body>
+	<div style="margin-bottom: 20px">
+		<a href="http://lupeng.me" style="font-style: italic; margin-right: 1em">Home</a>
+		<a href="http://lupeng.me/categories/JavaScript/" style="font-style: italic; margin-right: 1em">JavaScript</a>
+	</div>
+	<input type="button" id="start" value="Start" onclick="startTime()">
+	<input type="button" id="stop" value="Stop" onclick="stopTime()">
+	<div id="content" style="margin: 20px; font-family: fantasy;font-size: 5em"></div>
+</body>
+</html>
