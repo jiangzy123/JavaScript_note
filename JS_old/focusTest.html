@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>表单</title>
+		<script>
+		window.onload=function(){
+			document.fm.username.onblur = function(){
+				this.focus();
+			}
+			//document.getElementsByTagName("span")[0].childNodes[0].nodeValue = "hello world!!"
+			var span = document.getElementById("span");
+			var spanNodes = span.childNodes;
+			alert("!"+spanNodes[0].nodeValue+"!");
+		}
+		</script>
+	</head>
+	<body>
+		<form method="POST" name="fm" id="form" autocomplete="off" action=""/>
+			<input type="text" name="username" value="请输入用户名">
+		</form>
+		
+		<span id="span"> </span>
+	</body>
+</html>

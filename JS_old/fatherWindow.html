@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>父窗口</title>
+<!--		<script type="text/javascript" src="common.js"></script>
+		<script type="text/javascript" src="myjs02.js"></script>
+	-->
+		<script>
+			window.onclick=function(){
+				var newWin = window.open("test03.html" , "newWindow" ,"width=300 , height=300,top=200, left=200");
+			}
+			
+			window.onload = function(){
+				document.getElementById("button").onclick = function (){
+					alert(navigator.userAgent);//常用方法，来区分浏览器
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<a href="" id="baidu">baidu</a>
+		<input type="button" id="button" value="按钮">
+	</body>
+</html>

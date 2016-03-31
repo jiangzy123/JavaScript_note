@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>表单</title>
+		<style>
+			#form{
+				width:300;
+			}
+			#form div{
+				float:left;
+				margin:5px;
+			}
+			.label{
+				width:80px;
+				height:20px;
+				background-color:yellow;
+			}
+			span{
+				color:red;
+			}
+		</style>
+		<script src="form.js" type="text/javascript">
+		/*	window.onload = function(){
+				//访问form表单，直接通过document.fm
+				//alert(document.fm.tagName);//返回form
+				
+			}
+		*/
+		</script>
+	</head>
+	<body>
+		<form method="POST" name="fm" id="form" autocomplete="off" action=""/>
+		<div id="form">
+			<div class="label"><label>用户名</label></div><div><input type="text" name="username" value="请输入用户名"></div>
+			<div class="label"><label>密码</label></div><div><input type="password" name="password" value=""></div>
+			<div class="label"><label>重复密码</label></div><div><input type="password" name="repassword"></div>
+			<div class="label"><label>邮箱</label></div><div><input type="text" name="email" value="请输入邮箱"></div>
+			<div><input type="submit" name="submit" value="提交"></div>
+			<div><input type="reset" name="reset" value="取消"></div>
+			<div><span></span></div>
+		</div>
+		</form>
+	</body>
+</html>

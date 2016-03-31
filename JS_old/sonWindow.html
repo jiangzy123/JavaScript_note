@@ -1,0 +1,14 @@
+<html>
+	<head>
+		<title>子窗口</title>
+		<script>
+			window.onclick=function(){
+				//window.opener获取到父窗口对象
+				window.opener.document.title = "hello world!";
+			}
+		</script>
+	</head>
+	<body>
+		子窗口调用父窗口	
+	</body>
+</html>

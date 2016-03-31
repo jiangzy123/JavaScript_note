@@ -1,0 +1,122 @@
+<html>
+	<head>
+		<title>节点学习</title>
+		<script>
+			window.onload = function(){
+				//两种方法获取body和head节点
+				var body = document.documentElement.lastChild;
+				var head = document.documentElement.firstChild;
+			//	alert(body.tagName +" and "+ head.tagName);
+				//第二种方法
+			/*
+				var body = document.getElementsByTagName("body")[0];
+				var head = document.getElementsByTagName("head")[0];
+				alert(body.tagName +" and "+ head.tagName);
+			*/
+			
+			/*	alert(body.childNodes.length);
+				alert(filterChildNodes(body.childNodes).length);
+				for(var i=0 ; i < filterChildNodes(body.childNodes).length ; i++){
+					
+					alert(i + "," + filterChildNodes(body.childNodes)[i].tagName);
+				}
+			*/
+				/**
+					过滤空字符的节点（W3C标准中把空字符也算进节点中了）
+				*/
+				function filterChildNodes(nodes){
+					var fnodes = [];
+					for(var i=0 ; i < nodes.length ; i++){
+						if(nodes[i].nodeType === 3 && /^\s+$/.test(nodes[i].nodeValue)){
+							continue;
+						}
+						fnodes.push(nodes[i]);
+					}
+					return fnodes;
+				}
+			
+				/**
+					写出下一个兄弟节点的函数；
+					由于W3C标准中，把空字符也算进节点中了，于是函数就要把空字符给过滤掉
+				*/
+				
+				function nextSibling(currentNode){
+					var node = currentNode.nextSibling;
+					if(node == null){
+						return node;
+					}
+					while(node.nodeType === 3 && /^\s+$/.test(node.nodeValue)){
+						node = node.nextSibling;
+					}
+					return (node.nodeType == 1)?node:false;
+				}
+				
+			/*	var h1 = document.getElementById("header");
+				alert(h1.nextSibling.nodeType);
+				alert(nextSibling(h1).nodeName);
+			*/
+			
+			/**
+				图片放大缩小，写法1：直接改属性
+			*/
+			/*	var pic = document.getElementsByTagName("img")[0];
+				pic.onclick = function(){
+					if(pic.getAttribute("width") == "200"){
+						pic.setAttribute("width" , "300");
+					}else{
+						pic.setAttribute("width" , "200");
+					}
+					
+				}
+			*/	
+			/**
+				图片放大缩小，写法2：用class属性，结合css
+			*/
+				var pic = document.getElementsByTagName("img")[1];
+				pic.onclick = tobig;
+				function tobig(){
+					pic.className = "big";
+					pic.onclick = tosmall;
+				}
+				function tosmall(){
+					pic.className = "small"
+					pic.onclick = tobig;
+				}
+				
+				/**
+					append多个节点函数
+				*/
+				
+				function appendMore(node){
+					//alert(arguments.length);
+					//arguments对象，一个特殊属性。arguments对象就像数组，但是它却不是数组。
+					//arguments是收到的实参副本
+					for(var i = 1 ; i < arguments.length; i++){
+						node.appendChild(arguments[i]);
+					}
+					return node;
+				}
+				var div1 = document.createElement("div");
+				var div2 = document.createElement("div");
+				var div3 = document.createElement("div");
+				appendMore(document.getElementById("header"),div1,div2,div3);
+				//alert(arguments.length);//默认大小为1
+			}
+		</script>
+		
+		<style>
+			.small{
+				width:200;
+			}
+			.big{
+				width:400;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 id="header">hello world!</h1>
+		<h2>java</h2>
+		<p>javascript<img src="test.jpg" name="mm" width="200"/></p>
+		<p>javascript<img src="test.jpg" name="mm" class="small"/></p>
+	</body>
+</html>
